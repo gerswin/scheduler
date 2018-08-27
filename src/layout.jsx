@@ -8,6 +8,8 @@ import 'legit-rubyfill/array/equals';
 import Chart from './chart'
 import Header from './header'
 import Resources from './resources'
+import Clean from './clean'
+
 import RangeSelector from './range_selector'
 
 class Layout extends Component {
@@ -20,6 +22,8 @@ class Layout extends Component {
     eventResized: PropTypes.func.isRequired,
     eventClicked: PropTypes.func.isRequired,
     cellClicked: PropTypes.func.isRequired,
+    resourceClicked: PropTypes.func.isRequired,
+
     rangeChanged: PropTypes.func.isRequired,
     rangeDidChange: PropTypes.bool.isRequired,
     width: PropTypes.number.isRequired,
@@ -36,7 +40,7 @@ class Layout extends Component {
   }
 
   render() {
-    const { rangeDidChange, rangeChanged, width, range, resources, rowHeight } = this.props
+    const { rangeDidChange, rangeChanged, width, range, resources, rowHeight,resourceClicked } = this.props
 
     return (
       <div style={{ width: width, overflow: 'hidden' }}>
@@ -44,7 +48,8 @@ class Layout extends Component {
         <div className='layout-wrapper' style={{ width: width }}>
           <Header range={range} width={width} />
           <div className='chart-wrapper' style={{ display: 'flex', width: width }}>
-            <Resources height={rowHeight} width={width} resources={resources} />
+            <Clean resourceClicked={resourceClicked} height={rowHeight} width={width} resources={resources} />
+            <Resources resourceClicked={resourceClicked} height={rowHeight} width={width} resources={resources} />
             <Chart {...this.props} />
           </div>
         </div>

@@ -14,7 +14,7 @@ export default class RangeDate {
   }
 
   toCal() {
-    return this.date.format('MMM[\n]M/D')
+    return this.date.format('MMM[\n]D')
   }
 
   toRef() {

@@ -62,6 +62,7 @@ export default class Scheduler extends Component {
     ]),
     rowHeight: PropTypes.number,
     width: PropTypes.number.isRequired,
+    onResourceClicked: PropTypes.func,
     onEventChanged: PropTypes.func,
     onEventResized: PropTypes.func,
     onEventClicked: PropTypes.func,
@@ -73,6 +74,7 @@ export default class Scheduler extends Component {
     from: new RangeDate(),
     to: new RangeDate().advance('weeks', 4),
     rowHeight: 30,
+    width:60,
     selectorStyles: {},
     chartStyles: {}
   }
@@ -117,6 +119,12 @@ export default class Scheduler extends Component {
           { id, title, startDate, duration, resource, disabled } = props
     if (onEventClicked) onEventClicked({ id, title, startDate, duration, resource, disabled })
   }
+  fireResourceClicked = (props) => {
+
+    const { onResourceClicked } = this.props,
+          { id,name } = props
+    if (onResourceClicked) onResourceClicked( { id,name })
+  }
 
   fireCellClicked = (resource, date) => {
     const { onCellClicked } = this.props
@@ -138,6 +146,7 @@ export default class Scheduler extends Component {
           eventResized={this.fireEventResized}
           eventClicked={this.fireEventClicked}
           cellClicked={this.fireCellClicked}
+          resourceClicked={this.fireResourceClicked}
         />
       </Provider>
     )

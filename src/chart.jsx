@@ -53,7 +53,7 @@ export default class Chart extends Component {
   renderEvent(resource, date) {
     const { rowHeight, eventChanged, eventResized, eventClicked } = this.props
     const currentEvent = this.props.events.find(event => {
-      return event.resource === resource && event.startDate === date
+      return event.resource === resource.id && event.startDate === date
     })
 
     if (currentEvent) {
@@ -71,11 +71,10 @@ export default class Chart extends Component {
         let eventEnd = new RangeDate(event.startDate).advance('days', event.duration),
             from = this.props.range.from.date,
             eventStart = new RangeDate(event.startDate).date
-
         return (
           eventEnd.toRef() === date &&
           from.isAfter(eventStart, 'day') &&
-          event.resource === resource
+          event.resource === resource.id
         )
       })
 
@@ -99,12 +98,12 @@ export default class Chart extends Component {
 
   renderCell(resource, date) {
     const { width, range } = this.props
-
+console.log((width * 0.95 / range.daysInRange()) + 1)
     return (
       <div
         className='cell-wrapper'
         key={`${resource}${date}`}
-        style={ Object.assign({ width: `${(width * 0.95 / range.daysInRange()) + 1}px`, height: this.props.rowHeight }, cellWrapper) }>
+        style={ Object.assign({ width: `${(width * 0.935 / range.daysInRange()) + 1}px`, height: this.props.rowHeight }, cellWrapper) }>
         <Cell
           resource={resource}
           date={date}

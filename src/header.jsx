@@ -6,7 +6,7 @@ import { headerWrapper, chartHeader } from './styles'
 
 export default ({ range, width }) => (
   <div className='header-wrapper' style={Object.assign({ width: width }, headerWrapper)}>
-    <div className='header-cell-holder' style={{ marginLeft: `${width * 0.05}px`, width: `${width * 0.95}px`, display: 'flex' }}>
+    <div className='header-cell-holder' style={{ marginLeft: `${width * 0.063}px`, width: `${width * 0.935}px`, display: 'flex' }}>
       { range.map(date => (
           <div
             className='header-cell'

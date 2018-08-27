@@ -28,7 +28,7 @@ function collect(connect, monitor) {
 @DropTarget(ItemTypes.EVENT, cellTarget, collect)
 export default class Cell extends React.Component {
   static propTypes = {
-    resource: PropTypes.string.isRequired,
+    resource: PropTypes.object.isRequired,
     date: PropTypes.string.isRequired
   }
 

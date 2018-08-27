@@ -1,6 +1,6 @@
 export const selectors = {
   textAlign: 'center',
-  margin: '25px 0'
+  margin: '10px 0'
 }
 
 export const leftButton = {
@@ -65,6 +65,7 @@ export const resourceSideBar = {
   margin: '0 -1px -1px 0',
   textAlign: 'center',
   zIndex: 99,
+  cursor: 'pointer',
   backgroundColor: '#FFF'
 }
 

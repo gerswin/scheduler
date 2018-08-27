@@ -61,10 +61,10 @@ The scheduler component also takes more optional props:
 `onEventChanged` - A call back that is fired when the event is moved. It receives an object containing the new event props  
 `onEventResized` - A call back that is fired when the event is resized. It receives an object containing the new event props  
 `onEventClicked` - A call back that is fired when the event is clicked. It receives an object containing the event props  
+`onResourceClicked` - A call back that is fired when resource is clicked 
 `onCellClicked`  - A call back that is fired when an empty cell on the scheduler is clicked. It receives the date and resource name as props  
 `onRangeChanged` - A call back that is fired when the date range is changed. It receives a `DateRange` object with the new range.  
 `from` - Either a date string or a `RangeDate` object defining the start date for the range.
-`onResourceClicked` - A call back that is fired when resource is clicked 
 
 `to` - Either a date string or a `RangeDate` object defining the end date for the range.
 

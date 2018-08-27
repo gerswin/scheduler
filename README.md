@@ -22,7 +22,25 @@ The scheduler component has three required props:
 
 The resources array is just strings:
 ```
-['Resource 1', 'Resource 2', 'Resource 3']
+ [{
+    name: "1012",
+    id: "12"
+}, {
+    name: "2022",
+    id: "14"
+}, {
+    name: "2224",
+    id: "16"
+}, {
+    name: "2225",
+    id: "18"
+}, {
+    name: "6227",
+    id: "17"
+}, {
+    name: "2232",
+    id: "19"
+}]
 ```
 
 The events array is an array of objects:
@@ -46,6 +64,8 @@ The scheduler component also takes more optional props:
 `onCellClicked`  - A call back that is fired when an empty cell on the scheduler is clicked. It receives the date and resource name as props  
 `onRangeChanged` - A call back that is fired when the date range is changed. It receives a `DateRange` object with the new range.  
 `from` - Either a date string or a `RangeDate` object defining the start date for the range.
+`onResourceClicked` - A call back that is fired when resource is clicked 
+
 `to` - Either a date string or a `RangeDate` object defining the end date for the range.
 
 ## Development

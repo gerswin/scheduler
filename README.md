@@ -49,7 +49,7 @@ The events array is an array of objects:
   title: 'A great event',  // Required: The title of the event
   startDate: '2016-01-24', // Required: The start date, must be in the format of "YYYY-MM-DD"
   duration: 4,             // Required: The duration of the event in days
-  resource: 'Resource 1',  // Required: The name of the resource the event belongs to. Must match the resource name from the resources prop
+  resource: 'Resource 1',  // Required: The name of the resource the event belongs to. Must match the resource id from the resources prop
   id: '3829-fds89',        // Required: A unique identifier. This can be anything you want as long as it's unique
   disabled: false,         // Optional: Whether or not this event can be moved (it can still be resized). Defaults to false.
   styles: {}               // Optional: An object of styles to apply to the event object
